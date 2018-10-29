@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TasksController extends Controller{
 
-    public function getIndex(Request $request) {
+    public function index(Task $task){
 
-        return view('tasks.index');
+        $result = $task->all();
+
+        return view('tasks.index', ['tasks' => $result]);
     }
 }
