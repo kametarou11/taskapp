@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\TaskRepository;
+use App\Models\Task;
 
 class TasksController extends Controller{
 
     protected $task;
 
-    public function __construct(TaskRepository $task)
+    public function __construct(Task $task)
     {
         $this->task = $task;
     }
 
     public function index(){
 
-        $tasks = $this->task->getAll();
+        $tasks = $this->task->all();
 
         return view('tasks.index', ['tasks' => $tasks]);
     }
