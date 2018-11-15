@@ -1,0 +1,29 @@
+.taskList{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 200px;
+}
+
+.taskList, .taskList th, .taskList td{
+    border-collapse: collapse;
+}
+
+.taskList th{
+    width: 100px;
+    padding: 5px;
+    background-color: lightgrey;
+}
+
+.taskList th:first-child{
+    border-radius: 6px 0 0 0;
+}
+
+.taskList th:last-child{
+    border-radius: 0 6px 0 0;
+}
+
+.taskList td{
+    text-align: center;
+    padding: 5px;
+    border-bottom: solid 1px lightgrey;
+}

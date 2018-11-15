@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TasksController extends Controller{
 
-    public function getIndex(Request $request) {
+    protected $task;
 
-        return view('tasks.index');
+    public function __construct(Task $task)
+    {
+        $this->task = $task;
+    }
+
+    public function index(){
+
+        $tasks = $this->task->all();
+
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 }
